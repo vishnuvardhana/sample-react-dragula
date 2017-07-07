@@ -1,4 +1,16 @@
 ## To run the App
-`Git Clone`
-`yarn install`
-`yarn start`
+
+```
+git clone https://github.com/vishnuvardhana/sample-react-dragula.git
+```
+
+```
+cd sample-react-dragula
+```
+
+```
+yarn install
+```
+```
+yarn start
+```
