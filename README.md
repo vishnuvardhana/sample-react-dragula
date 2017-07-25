@@ -1,6 +1,7 @@
 ## To run the App
 
 ```
+
 git clone https://github.com/vishnuvardhana/sample-react-dragula.git
 ```
 ```
