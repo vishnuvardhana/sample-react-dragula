@@ -32,11 +32,17 @@
 .ex-moved{
   cursor: move;
   background: #F0F0F0;
+  position: relative;
 }
 .ex-over{
   background: #FFF;
   border:1px dotted #CCC;
   box-shadow: 1px #000;
+}
+.gu-mirror {
+ position: absolute;
+
+
 }
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

@@ -22,16 +22,16 @@ class App extends Component {
     render() {
         let panel1 = [];
         let panel2 = [];
-        panel1.length = 5;
-        panel2.length = 4;
+        panel1.length = 1;
+        panel2.length = 3;
         panel1.fill(0);
         panel2.fill(0);
         return (
-            <div className="uk-container">
+            <div className="uk-container" >
                 <br/>
                 <h5 className="uk-text-center">Move Cards across panels and within panels too</h5>
-                <DndClass dndClass1={'container-1'} dndClass2={'container-2'}>
-                    <GridClass gutter={'small'}>
+                <DndClass dndClass1={'container-1'} dndClass2={'container-2'} dndParent={'grid-parent'}>
+                    <GridClass gutter={'small'} className={'grid-parent'}>
 
                         <ColClass width={'1-2'} className={'containers container-1'} >
                             {panel1.map(function (panel, index) {

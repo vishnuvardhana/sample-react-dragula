@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import dragula from 'dragula';
-
+import $ from 'jquery';
 
 const DndClass = React.createClass({
     displayName: "Dnd",
@@ -24,7 +24,7 @@ const DndClass = React.createClass({
               return false; // don't prevent any drags from initiating by default
           },
           copy: false,                       // elements are moved by default, not copied
-          copySortSource: false,             // elements in copy-source containers can be reordered
+          copySortSource: true,             // elements in copy-source containers can be reordered
           revertOnSpill: false,              // spilling will put the element back where it was dragged from, if this is true
           removeOnSpill: false,              // spilling will `.remove` the element, if this is true
           mirrorContainer: document.body,    // set the element that gets mirror elements appended
@@ -35,9 +35,13 @@ const DndClass = React.createClass({
         setTimeout(() => {
             dragula([document.querySelector('.' + self.props.dndClass1), document.querySelector('.' + self.props.dndClass2)],options)
             .on('drag', function (el) {
+              var mirrorTop = el.offsetTop + 20;
               el.style.background = '#F0F0F0';
               el.style.opcity = '0.3';
-               el.className = el.className.replace('ex-moved', '');
+              el.className = el.className.replace('ex-moved', '');
+              setTimeout(function(){
+                  document.querySelector('.gu-mirror').style.top = mirrorTop+'px';
+              })
              }).on('drop', function (el) {
                el.style.background = '#CCC';
                el.style.opcity = '1';
@@ -58,9 +62,9 @@ const DndClass = React.createClass({
             children,
           } = this.props;
         return (
-            <div>
+            <span>
                 {children}
-            </div>
+            </span>
         )
     }
 });
